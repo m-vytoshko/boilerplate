@@ -39,3 +39,5 @@ dependencies {
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation 'androidx.paging:paging-runtime-ktx:2.1.2'
 }
+
+apply from: 'publish.gradle'
