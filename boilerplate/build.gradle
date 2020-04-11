@@ -2,7 +2,10 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'maven-publish'
+
+apply plugin: 'com.github.dcendents.android-maven'
+group = 'com.ss'
+version = '1.0.0'
 
 android {
     compileSdkVersion 29
@@ -27,28 +30,6 @@ android {
 
     dataBinding {
         enabled true
-    }
-}
-
-task sourceJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier "sources"
-}
-
-publishing {
-    publications {
-        bar(MavenPublication) {
-            groupId 'com.ss'
-            artifactId 'boilerplate'
-            version '0.1'
-            artifact(sourceJar)
-            artifact("$buildDir/outputs/aar/bar-release.aar")
-        }
-    }
-    repositories {
-        maven {
-            url "$buildDir/repo"
-        }
     }
 }
 
