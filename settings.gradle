@@ -1,3 +1,2 @@
-rootProject.name='Boilerplate'
-include ':app'
-include ':boilerplate'
+rootProject.name='boilerplate'
+include ':app', ':boilerplate'
